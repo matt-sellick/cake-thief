@@ -91,7 +91,7 @@ fn max_duffel_bag_value(cake_tuples: &Vec<(u32, u32)>, capacity: u32) -> u32 {
 fn get_number() -> u32 {
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).expect("Error getting input");
-    let number: u32 = input_line.trim().parse().expect("Not a number");
+    let number: u32 = input_line.trim().parse().expect("Not a number"); // panics if invalid
     number
 }
 
@@ -101,7 +101,7 @@ fn get_char() -> char {
     io::stdin().read_line(&mut input_line).expect("Error getting input");
     let character = match input_line.trim().parse() {
         Ok(ch) => ch,
-        Err(_) => 'n', 
+        Err(_) => 'n', // returns 'n' if invalid
     };
     character
 }
